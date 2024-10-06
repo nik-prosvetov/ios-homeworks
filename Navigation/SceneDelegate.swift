@@ -20,11 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabBarController = UITabBarController()
         
-        let feedViewController = ViewController()
+        let feedViewController = FeedViewController()
         feedViewController.title = "Лента"
         feedViewController.tabBarItem.image = UIImage(systemName: "house")
         
-        let profileViewController = ViewController()
+        let profileViewController = ProfileViewController()
         profileViewController.title = "Профиль"
         profileViewController.tabBarItem.image = UIImage(systemName: "person")
         
