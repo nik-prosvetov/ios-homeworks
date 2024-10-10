@@ -11,8 +11,6 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let post = Post(title: "Мой первый пост")
-        
         let button = UIButton(type: .system)
         button.setTitle("Показать пост", for: .normal)
         button.addTarget(self, action: #selector(showPost), for: .touchUpInside)
