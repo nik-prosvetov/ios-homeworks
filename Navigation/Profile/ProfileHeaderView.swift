@@ -8,11 +8,45 @@
 import UIKit
 
 class ProfileHeaderView: UIView {
-
-    let nameLabel = UILabel()
-    let avatarImageView = UIImageView()
-    let statusLabel = UILabel()
-    let button = UIButton()
+    
+    let nameLabel: UILabel = {
+        let nameLabelParameters = UILabel()
+        nameLabelParameters.text = "Имя"
+        nameLabelParameters.font = UIFont.systemFont(ofSize: 17)
+        nameLabelParameters.textColor = .black
+        
+        return nameLabelParameters
+    } ()
+    
+    let avatarImageView: UIImageView = {
+        let avatarImageViewParameters = UIImageView()
+        avatarImageViewParameters.image = UIImage(named: "avatar")
+        avatarImageViewParameters.layer.cornerRadius = 40
+        avatarImageViewParameters.clipsToBounds = true
+        avatarImageViewParameters.layer.borderColor = UIColor.white.cgColor
+        avatarImageViewParameters.layer.borderWidth = 3
+        
+        return avatarImageViewParameters
+    }()
+    
+    let statusLabel: UILabel = {
+        let statusLabelParameters = UILabel()
+        statusLabelParameters.text = "Статус"
+        statusLabelParameters.font = UIFont.systemFont(ofSize: 15)
+        statusLabelParameters.textColor = .gray
+        
+        return statusLabelParameters
+    }()
+    
+    let button: UIButton = {
+        let buttonParameters = UIButton()
+        buttonParameters.setTitle("Показать статус", for: .normal)
+        buttonParameters.setTitleColor(.black, for: .normal)
+        buttonParameters.backgroundColor = .systemBlue
+        buttonParameters.layer.cornerRadius = 16
+        
+        return buttonParameters
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,26 +92,6 @@ class ProfileHeaderView: UIView {
     }
     
     func setupViews() {
-        
-        nameLabel.text = "Имя"
-        nameLabel.font = UIFont.systemFont(ofSize: 17)
-        nameLabel.textColor = .black
-
-        avatarImageView.image = UIImage(named: "avatar")
-        avatarImageView.layer.cornerRadius = 40
-        avatarImageView.clipsToBounds = true
-        avatarImageView.layer.borderColor = UIColor.white.cgColor
-        avatarImageView.layer.borderWidth = 3
-
-        statusLabel.text = "Статус"
-        statusLabel.font = UIFont.systemFont(ofSize: 15)
-        statusLabel.textColor = .gray
-
-        button.setTitle("Показать статус", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .systemBlue
-        button.layer.cornerRadius = 16
-
         addSubview(nameLabel)
         addSubview(avatarImageView)
         addSubview(statusLabel)
