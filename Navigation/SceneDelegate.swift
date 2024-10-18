@@ -12,7 +12,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-<<<<<<< HEAD
         
         guard let scene = (scene as? UIWindowScene) else { return }
         
@@ -38,12 +37,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         
         self.window = window
-=======
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = ProfileViewController()
-        window?.makeKeyAndVisible()
->>>>>>> feature/iosui-2
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
