@@ -16,8 +16,6 @@
 		E5061B4B2CA8691D00E3D181 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5061B4A2CA8691D00E3D181 /* PostViewController.swift */; };
 		E5061B4D2CA86ACA00E3D181 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5061B4C2CA86ACA00E3D181 /* Post.swift */; };
 		E5061B4F2CA86DA400E3D181 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5061B4E2CA86DA400E3D181 /* InfoViewController.swift */; };
-		E5061B522CA9884600E3D181 /* rofileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5061B512CA9884600E3D181 /* rofileHeaderView.swift */; };
-		E5061B542CA989E600E3D181 /* rofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5061B532CA989E600E3D181 /* rofileViewController.swift */; };
 		E5ADC5E52CC3CFFD0078687B /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADC5E42CC3CFFD0078687B /* ProfileHeaderView.swift */; };
 		E5ADC5E72CC3D47E0078687B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADC5E62CC3D47E0078687B /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,8 +51,6 @@
 		E5061B4A2CA8691D00E3D181 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		E5061B4C2CA86ACA00E3D181 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E5061B4E2CA86DA400E3D181 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		E5061B512CA9884600E3D181 /* rofileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rofileHeaderView.swift; sourceTree = "<group>"; };
-		E5061B532CA989E600E3D181 /* rofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rofileViewController.swift; sourceTree = "<group>"; };
 		E5ADC5E42CC3CFFD0078687B /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E5ADC5E62CC3D47E0078687B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +101,6 @@
 		E5061B152CA8327D00E3D181 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				E5061B502CA9879300E3D181 /* Profile */,
 				E5061B162CA8327D00E3D181 /* AppDelegate.swift */,
 				E5061B182CA8327D00E3D181 /* SceneDelegate.swift */,
 				E5061B1A2CA8327D00E3D181 /* ViewController.swift */,
@@ -120,15 +115,6 @@
 				E5ADC5E62CC3D47E0078687B /* ProfileViewController.swift */,
 			);
 			path = Navigation;
-			sourceTree = "<group>";
-		};
-		E5061B502CA9879300E3D181 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				E5061B512CA9884600E3D181 /* rofileHeaderView.swift */,
-				E5061B532CA989E600E3D181 /* rofileViewController.swift */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,10 +254,8 @@
 				E5061B4D2CA86ACA00E3D181 /* Post.swift in Sources */,
 				E5061B4F2CA86DA400E3D181 /* InfoViewController.swift in Sources */,
 				E5ADC5E72CC3D47E0078687B /* ProfileViewController.swift in Sources */,
-				E5061B542CA989E600E3D181 /* rofileViewController.swift in Sources */,
 				E5ADC5E52CC3CFFD0078687B /* ProfileHeaderView.swift in Sources */,
 				E5061B192CA8327D00E3D181 /* SceneDelegate.swift in Sources */,
-				E5061B522CA9884600E3D181 /* rofileHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

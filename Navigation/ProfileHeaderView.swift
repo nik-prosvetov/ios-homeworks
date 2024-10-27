@@ -11,7 +11,7 @@ class ProfileHeaderView: UIView {
     let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "avatar")
-        imageView.layer.cornerRadius = 40
+        imageView.layer.cornerRadius = 50
         imageView.clipsToBounds = true
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.borderWidth = 3
@@ -69,32 +69,34 @@ class ProfileHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupSubviews() {
+    func addSubviews() {
         addSubview(avatarImageView)
         addSubview(fullNameLabel)
         addSubview(statusLabel)
         addSubview(statusTextField)
         addSubview(setStatusButton)
+    }
+    
+    func setupSubviews() {
+        addSubviews()
         
         avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
         avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         avatarImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         avatarImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
-        fullNameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 8).isActive = true
-        fullNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
-        fullNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        fullNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16).isActive = true
+        fullNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
         
+        statusLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16).isActive = true
         statusLabel.topAnchor.constraint(equalTo: fullNameLabel.bottomAnchor, constant: 8).isActive = true
-        statusLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
-        statusLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         
-        statusTextField.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 8).isActive = true
         statusTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         statusTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        statusTextField.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 8).isActive = true
         
-        setStatusButton.topAnchor.constraint(equalTo: statusTextField.bottomAnchor, constant: 8).isActive = true
         setStatusButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         setStatusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        setStatusButton.topAnchor.constraint(equalTo: statusTextField.bottomAnchor, constant: 8).isActive = true
     }
 }
