@@ -10,6 +10,7 @@ import UIKit
 class ProfileViewController: UIViewController {
     let profileHeaderView: ProfileHeaderView = {
         let view = ProfileHeaderView()
+        view.backgroundColor = UIColor.lightGray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -25,6 +26,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setupSubviews()
     }
     
@@ -35,7 +37,7 @@ class ProfileViewController: UIViewController {
         profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         profileHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        profileHeaderView.heightAnchor.constraint(equalToConstant: 220).isActive = true
+        profileHeaderView.heightAnchor.constraint(equalToConstant: 240).isActive = true
         
         newButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         newButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
