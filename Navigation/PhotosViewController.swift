@@ -2,8 +2,6 @@
 //  PhotosViewController.swift
 //  Navigation
 //
-//  Created by Nikita Prosvetov on 09.11.2024.
-//
 
 import UIKit
 
@@ -24,9 +22,7 @@ class PhotosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setupNavigationBar()
-        setupCollectionView()
-        loadPhotos()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +33,12 @@ class PhotosViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    private func setupUI() {
+        setupNavigationBar()
+        setupCollectionView()
+        loadPhotos()
     }
     
     private func setupNavigationBar() {
@@ -83,7 +85,7 @@ extension PhotosViewController: UICollectionViewDataSource {
 extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let spacing: CGFloat = 8
-        let totalSpacing = spacing * 4 
+        let totalSpacing = spacing * 4
         let width = (collectionView.bounds.width - totalSpacing) / 3
         return CGSize(width: width, height: width)
     }

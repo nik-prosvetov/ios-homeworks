@@ -2,8 +2,6 @@
 //  PhotosTableViewCell.swift
 //  Navigation
 //
-//  Created by Nikita Prosvetov on 09.11.2024.
-//
 
 import UIKit
 
@@ -34,37 +32,13 @@ class PhotosTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    private let photo1ImageView: UIImageView = {
+    private lazy var photoImageViews: [UIImageView] = (0..<4).map { _ in
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 6
         return imageView
-    }()
-    
-    private let photo2ImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 6
-        return imageView
-    }()
-    
-    private let photo3ImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 6
-        return imageView
-    }()
-    
-    private let photo4ImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 6
-        return imageView
-    }()
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -76,15 +50,19 @@ class PhotosTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
+        setupViews()
+        setupConstraints()
+    }
+    
+    private func setupViews() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(arrowImageView)
         contentView.addSubview(photosStackView)
         
-        photosStackView.addArrangedSubview(photo1ImageView)
-        photosStackView.addArrangedSubview(photo2ImageView)
-        photosStackView.addArrangedSubview(photo3ImageView)
-        photosStackView.addArrangedSubview(photo4ImageView)
-        
+        photoImageViews.forEach { photosStackView.addArrangedSubview($0) }
+    }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
@@ -98,15 +76,13 @@ class PhotosTableViewCell: UITableViewCell {
             photosStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
             photosStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
             photosStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
-            photosStackView.heightAnchor.constraint(equalToConstant: 80) // Высота фотографий
+            photosStackView.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
     
     func configure(with photos: [UIImage]) {
-        guard photos.count == 4 else { return }
-        photo1ImageView.image = photos[0]
-        photo2ImageView.image = photos[1]
-        photo3ImageView.image = photos[2]
-        photo4ImageView.image = photos[3]
+        zip(photoImageViews, photos).forEach { imageView, photo in
+            imageView.image = photo
+        }
     }
 }
